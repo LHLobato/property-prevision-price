@@ -101,9 +101,6 @@ To solve this, the API was implemented with a hybrid approach:
 
     Filter Rules: The API first checks 4 "golden rules" that immediately nullify the risk:
 
-        is_land == 1 (Event is on land)
-
-        profundidade > 100km (Event is too deep)
 
         type_earthquake == 0 (Event was not an earthquake)
 
