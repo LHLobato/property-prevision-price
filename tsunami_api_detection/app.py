@@ -66,7 +66,7 @@ def predict():
             "probability_no_tsunami": 1.0, 
             "probability_tsunami_risk": 0}
             return jsonify(response), 200
-        
+
 
 # Outra feature: Risco em terra
 
@@ -75,7 +75,11 @@ def predict():
         property_values = {f: properties_data[f] for f in PROPERTY_FEATURES}
         risco_mag_prof = properties_data['mag'] / safe_depth
         risco_terra = properties_data['mag'] * (1 - is_land_feature)
-        
+        if properties_data['mag'] < 7.0:
+            return jsonify({"is_tsunami_risk": False, 
+            "probability_no_tsunami": 1.0, 
+            "probability_tsunami_risk": 0,
+            "note": "Magnitude is below 7.0 threshold."})
         feature_values = [
             property_values['mag'],
             property_values['sig'],

@@ -85,16 +85,12 @@ if analyze_button:
             is_risk = data.get("is_tsunami_risk", False)
             prob_yes = data.get("probability_tsunami_risk", 0) * 100
             prob_no = data.get("probability_no_tsunami", 0) * 100
-            note = data.get("note") 
 
             if is_risk:
                 st.warning(f"**ALERTA: RISCO DE TSUNAMI DETECTADO**", icon="🌊")
             else:
                 st.success(f"**SEGURO: Baixo Risco de Tsunami Detectado**", icon="✅")
             
-            if note:
-                st.info(f"Nota do Analisador: {note}")
-
             col1, col2 = st.columns(2)
             col1.metric("Probabilidade de Risco", f"{prob_yes:.1f}%")
             col2.metric("Probabilidade de Segurança", f"{prob_no:.1f}%")
