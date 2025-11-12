@@ -44,10 +44,11 @@ pip install -r requirements.txt
 The API is the brain of the system. It loads the trained model (best_model.joblib) and the scaler.joblib.
 
 
-# Navigate to the API folder (assuming app.py is there)
+# Navigate to the API folder
+```sh
 cd /path/to/project/api
 python app.py
-
+```
 The terminal should display: Initializing Tsunami Detection API... Success, models loaded! and Running on http://0.0.0.0:5000/.
 
 3. Terminal 2: Run the Streamlit Interface
@@ -56,9 +57,10 @@ This is the frontend that the user sees and interacts with.
 
 
 # Navigate to the frontend folder
+```sh
 cd /path/to/project/frontend
 streamlit run streamlit_app.py
-
+```
 Streamlit will automatically open in your browser at http://localhost:8501.
 
 # Project Methodology
